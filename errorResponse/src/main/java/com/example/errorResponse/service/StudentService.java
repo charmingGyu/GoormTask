@@ -24,4 +24,8 @@ public class StudentService {
     public List<Student> getAll() {
         return studentRepository.getAll();
     }
+
+    public List<Student> getScoreStudent(int score) {
+        return studentRepository.get(score);
+    }
 }

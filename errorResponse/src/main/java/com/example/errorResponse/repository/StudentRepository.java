@@ -22,4 +22,10 @@ public class StudentRepository { // interface 한번...
                 .sorted()
                 .collect(Collectors.toList());
     }
+
+    public List<Student> get(int score) {
+        return students.stream()
+                .filter(student -> student.getScore() == score)
+                .collect(Collectors.toList());
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.errorResponse.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import java.util.List;
@@ -12,10 +13,13 @@ public class ApiResponse<T> {
 
     private final Status status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<T> results;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Metadata metadata;
 
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private Object data;
 
     public ApiResponse(List<T> results) {
